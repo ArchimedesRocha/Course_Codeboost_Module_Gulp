@@ -34,7 +34,7 @@ function compilaSass() {
 gulp.task("css-minificado", compilaSass);
 
 //------------------------------------------------------------------------------
-//Compilador de SASS para CSS
+//Minificador CSS para Bibliotecas externas
 function pluginsCSS() {
   return gulp
     .src("css/lib/*.css")
@@ -45,7 +45,7 @@ function pluginsCSS() {
 gulp.task("css-plugins-minificado", pluginsCSS);
 
 //------------------------------------------------------------------------------
-//Toda a compressãoe  minificação do arquivo all.js
+//Minificador de todo o código JavaScript para o arquivo all.js
 function gulpJs() {
   return (
     gulp
@@ -68,7 +68,7 @@ function gulpJs() {
 gulp.task("js-all-minificado", gulpJs);
 
 //------------------------------------------------------------------------------
-//PluginsJs - Bibliotecas Externas
+//Minificador JS para Bibliotecas externas
 function pluginsJs() {
   return (
     gulp
@@ -82,7 +82,7 @@ function pluginsJs() {
 gulp.task("js-plugins-minificado", pluginsJs);
 
 //------------------------------------------------------------------------------
-//BrowserSync
+//BrowserSync Automation
 function browser() {
   browserSync.init({
     server: {
@@ -94,7 +94,7 @@ function browser() {
 gulp.task("browser-sync", browser);
 
 //------------------------------------------------------------------------------
-//Gulp Watch
+//Gulp Watch Rotina de Tarefas
 function watch() {
   //Rotina para compilar o SCSS para CSS
   gulp.watch("scss/*.scss", compilaSass);
@@ -110,7 +110,7 @@ function watch() {
 gulp.task("watch", watch);
 
 //------------------------------------------------------------------------------
-//Tarefas Default
+//Execução das Tarefas
 gulp.task(
   "default",
   gulp.parallel(
